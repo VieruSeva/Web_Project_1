@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -7,53 +6,65 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
+   
+    const slidesContainer = document.querySelector('.slides');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slideCount = slidesContainer.children.length;
+    let currentIndex = 0;
+
+    function updateSlider(index) {
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlider(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateSlider(currentIndex);
+    }
+
+   
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider(currentIndex);
+        });
+    });
+
+  
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    
+    setInterval(nextSlide, 10000);
+
+  
     const categoryTogglers = document.querySelectorAll('.category-toggler');
-    const subTogglers = document.querySelectorAll('.sub-toggler');
-    const productCards = document.querySelectorAll('.product-card');
+    const subCategoryLists = document.querySelectorAll('.sub-category-list');
 
     categoryTogglers.forEach(btn => {
         btn.addEventListener('click', () => {
             categoryTogglers.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const category = btn.dataset.category;
-            const subCategory = btn.dataset.sub || 'all';
-            
-            productCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                if (category === 'all' && subCategory === 'all') {
-                    card.style.display = 'block';
-                } else if (cardCategory.includes(category) && 
-                          (subCategory === 'all' || cardCategory.includes(subCategory))) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
+
+            subCategoryLists.forEach(list => {
+                list.classList.remove('active');
+                if (list.classList.contains(category)) {
+                    list.classList.add('active');
                 }
             });
         });
     });
 
-    subTogglers.forEach(subBtn => {
-        subBtn.addEventListener('click', () => {
-            const parent = subBtn.dataset.parent;
-            const sub = subBtn.dataset.sub;
-            const mainBtn = document.querySelector(`.category-toggler[data-category="${parent}"]`);
-            
-            mainBtn.click();
-            categoryTogglers.forEach(btn => btn.classList.remove('active'));
-            mainBtn.classList.add('active');
-            
-            productCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                if (cardCategory === `${parent}-${sub}`) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Initialize with all products visible
     document.querySelector('.category-toggler.active').click();
 });

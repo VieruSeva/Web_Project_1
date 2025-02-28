@@ -1,4 +1,4 @@
-/* styles.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -20,33 +20,42 @@ body {
     padding: 0 20px;
 }
 
+
 .navbar {
-    background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
+    background: linear-gradient(45deg, #ffdf4d, #ff8e1a);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    color: gold;
-    font-size: 2rem;
+    color: #1a1a1a;
+    font-size: 2.5rem;
+    font-weight: bold;
     text-decoration: none;
     margin-right: auto;
+    transition: transform 0.3s;
 }
 
-.menu {
-    position: relative;
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .hamburger {
     display: none;
-    color: gold;
-    font-size: 1.5rem;
+    color: #1a1a1a;
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hamburger:hover {
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -55,13 +64,67 @@ body {
 }
 
 .nav-links a {
-    color: #e8e8e8;
+    color: #1a1a1a;
     text-decoration: none;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: #ffdf4d;
+}
+
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('images/sports-banner.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.slide {
+    min-width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ffdf4d;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .gold-btn {
@@ -72,8 +135,9 @@ body {
     border: none;
     font-size: 1.3rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 0 15px rgba(255, 223, 77, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .gold-btn:hover {
@@ -81,29 +145,76 @@ body {
     box-shadow: 0 8px 30px rgba(255, 223, 77, 0.7);
 }
 
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://source.unsplash.com/1600x900/?sports');
-    background-size: cover;
-    height: 100vh;
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    z-index: 10;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+.slider-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #ffdf4d;
+.slider-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
 }
+
+
+.slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.indicator.active {
+    background: #ffdf4d;
+    transform: scale(1.2);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .category-browser {
     padding: 4rem 0;
+}
+
+.category-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .category-toggler {
@@ -122,28 +233,35 @@ body {
     color: #1a1a1a;
 }
 
-.sub-category-toggler {
-    background: #2c2c2c;
-    padding: 1rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
+.sub-category-container {
+    margin-top: 2rem;
 }
 
 .sub-category-list {
     display: none;
-    padding: 1rem;
-    background: #1a1a1a;
-    border-radius: 10px;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sub-category-list.active {
+    display: flex;
 }
 
 .sub-toggler {
-    display: block;
-    background: none;
-    border: none;
+    background: #2c2c2c;
     color: #e8e8e8;
-    padding: 0.5rem 0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    border: none;
     cursor: pointer;
+    transition: all 0.3s;
 }
+
+.sub-toggler:hover {
+    background: #ffdf4d;
+    color: #1a1a1a;
+}
+
 
 .product-gallery {
     padding: 4rem 0;
@@ -197,6 +315,7 @@ body {
     color: #1a1a1a;
 }
 
+
 .site-footer {
     background: #1a1a1a;
     padding: 3rem 0;
@@ -235,13 +354,5 @@ body {
 
     .nav-links a {
         margin: 1rem 0;
-    }
-
-    .sub-category-toggler {
-        display: none;
-    }
-
-    .sub-category-list {
-        display: block;
     }
 }

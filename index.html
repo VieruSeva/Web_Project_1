@@ -4,235 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportElite - Premium Sports Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header class="navbar">
         <div class="container">
-            <a href="#home" class="logo">SportElite</a>
-            <nav class="menu">
-                <button class="hamburger">&#9776;</button>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#products">Shop</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+            <a href="#" class="logo">SportElite</a>
+            <button class="hamburger">☰</button>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#shop">Shop</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
-
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Premium Sports Gear</h1>
-            
-            <a href="#categories" class="gold-btn">Discover Categories</a>
-        </div>
-    </section>
-
-    <section id="categories" class="category-browser">
-        <div class="container">
-            <div class="category-selector">
-                <div class="main-category">
-                    <button class="category-toggler active" data-category="all">All</button>
-                    <button class="category-toggler" data-category="football">Football</button>
-                    <button class="category-toggler" data-category="basketball">Basketball</button>
-                    <button class="category-toggler" data-category="tennis">Tennis</button>
-                    <button class="category-toggler" data-category="boxing">Boxing</button>
-                    <button class="category-toggler" data-category="running">Running</button>
-                    <button class="category-toggler" data-category="cycling">Cycling</button>
+    <section class="hero-section">
+        <div class="slider">
+            <div class="slides">
+              
+                <div class="slide active" style="background-image: url('images/sports-banner.jpg');">
+                    <div class="hero-content">
+                        <h1>Premium Sports Gear</h1>
+                        <p>Discover Categories</p>
+                        <a href="#categories" class="gold-btn">Shop Now</a>
+                    </div>
                 </div>
-                
-                <div class="sub-category">
-                    <div class="sub-category-toggler">Select Subcategory</div>
-                    <div class="sub-category-list">
-                        <div class="sub-category-group">
-                            <h3>Football</h3>
-                            <button class="sub-toggler" data-parent="football" data-sub="balls">Balls</button>
-                            <button class="sub-toggler" data-parent="football" data-sub="boots">Boots</button>
-                            <button class="sub-toggler" data-parent="football" data-sub="jerseys">Jerseys</button>
-                        </div>
-                        <div class="sub-category-group">
-                            <h3>Boxing</h3>
-                            <button class="sub-toggler" data-parent="boxing" data-sub="gloves">Gloves</button>
-                            <button class="sub-toggler" data-parent="boxing" data-sub="shorts">Shorts</button>
-                            <button class="sub-toggler" data-parent="boxing" data-sub="headgear">Headgear</button>
-                        </div>
-                        <div class="sub-category-group">
-                            <h3>Basketball</h3>
-                            <button class="sub-toggler" data-parent="basketball" data-sub="balls">Balls</button>
-                            <button class="sub-toggler" data-parent="basketball" data-sub="shoes">Shoes</button>
-                            <button class="sub-toggler" data-parent="basketball" data-sub="apparel">Apparel</button>
-                        </div>
-                        <div class="sub-category-group">
-                            <h3>Tennis</h3>
-                            <button class="sub-toggler" data-parent="tennis" data-sub="rackets">Rackets</button>
-                            <button class="sub-toggler" data-parent="tennis" data-sub="balls">Balls</button>
-                            <button class="sub-toggler" data-parent="tennis" data-sub="clothing">Clothing</button>
-                        </div>
+               
+                <div class="slide" style="background-image: url('images/football-banner.jpg');">
+                    <div class="hero-content">
+                        <h1>Football Essentials</h1>
+                        <p>Get Your Game On with Our Latest Collection</p>
+                        <a href="#categories" class="gold-btn">Explore Football</a>
+                    </div>
+                </div>
+              
+                <div class="slide" style="background-image: url('images/basketball-banner.jpg');">
+                    <div class="hero-content">
+                        <h1>Basketball Gear</h1>
+                        <p>Score Big with Our Pro-Grade Equipment</p>
+                        <a href="#categories" class="gold-btn">Explore Basketball</a>
                     </div>
                 </div>
             </div>
+          
+            <div class="slider-nav">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+           
+            <div class="slider-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
         </div>
     </section>
-
-    <section id="products" class="product-gallery">
+    <section class="category-browser">
         <div class="container">
-            <!-- Football Subcategories -->
+            <div class="category-container">
+                <button class="category-toggler active" data-category="all">All</button>
+                <button class="category-toggler" data-category="football">Football</button>
+                <button class="category-toggler" data-category="basketball">Basketball</button>
+                <button class="category-toggler" data-category="tennis">Tennis</button>
+                <button class="category-toggler" data-category="boxing">Boxing</button>
+                <button class="category-toggler" data-category="running">Running</button>
+                <button class="category-toggler" data-category="cycling">Cycling</button>
+            </div>
+            <div class="sub-category-container">
+               
+                <div class="sub-category-list football">
+                    <button class="sub-toggler" data-parent="football" data-sub="balls">Balls</button>
+                    <button class="sub-toggler" data-parent="football" data-sub="boots">Boots</button>
+                    <button class="sub-toggler" data-parent="football" data-sub="jerseys">Jerseys</button>
+                </div>
+              
+                <div class="sub-category-list basketball">
+                    <button class="sub-toggler" data-parent="basketball" data-sub="balls">Balls</button>
+                    <button class="sub-toggler" data-parent="basketball" data-sub="shoes">Shoes</button>
+                    <button class="sub-toggler" data-parent="basketball" data-sub="apparel">Apparel</button>
+                </div>
+                
+                <div class="sub-category-list tennis">
+                    <button class="sub-toggler" data-parent="tennis" data-sub="rackets">Rackets</button>
+                    <button class="sub-toggler" data-parent="tennis" data-sub="balls">Balls</button>
+                    <button class="sub-toggler" data-parent="tennis" data-sub="clothing">Clothing</button>
+                </div>
+                
+                <div class="sub-category-list boxing">
+                    <button class="sub-toggler" data-parent="boxing" data-sub="gloves">Gloves</button>
+                    <button class="sub-toggler" data-parent="boxing" data-sub="shorts">Shorts</button>
+                    <button class="sub-toggler" data-parent="boxing" data-sub="headgear">Headgear</button>
+                </div>
+               
+                <div class="sub-category-list running">
+                    <button class="sub-toggler" data-parent="running" data-sub="belts">Belts</button>
+                    <button class="sub-toggler" data-parent="running" data-sub="jerseys">Jerseys</button>
+                </div>
+               
+                <div class="sub-category-list cycling">
+                    <button class="sub-toggler" data-parent="cycling" data-sub="bottles">Bottles</button>
+                    <button class="sub-toggler" data-parent="cycling" data-sub="helmets">Helmets</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-gallery">
+        <div class="container">
             <div class="product-card" data-category="football-balls">
-                <img src="images/football-balls.jpg" alt="Premier Ball">
+                <img src="images/football-ball.jpg" alt="Championship Match Ball">
                 <div class="product-details">
                     <h3>Championship Match Ball</h3>
                     <span class="price">$99.99</span>
-                    <p>Bladder-free design with textured surface</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-            
             <div class="product-card" data-category="football-boots">
-                <img src="images/football-boots.jpg" alt="Pro Boots">
+                <img src="images/football-cleats.jpg" alt="Elite Strike Cleats">
                 <div class="product-details">
                     <h3>Elite Strike Cleats</h3>
                     <span class="price">$169.99</span>
-                    <p>K-leather upper with dynamic fit system</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
-            
-            <div class="product-card" data-category="football-gloves">
-                <img src="images/football-gloves.jpg" alt="Goalkeeper Gloves">
+            <div class="product-card" data-category="boxing-gloves">
+                <img src="images/boxing-gloves.jpg" alt="Pro Keeper Gloves">
                 <div class="product-details">
                     <h3>Pro Keeper Gloves</h3>
                     <span class="price">$49.99</span>
-                    <p>3D finger separation with foam padding</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-    
-            <!-- Boxing Subcategories -->
-            <div class="product-card" data-category="boxing-hand-wraps">
-                <img src="images/boxing-hand-wraps.jpg" alt="Protective Wraps">
-                <div class="product-details">
-                    <h3>Pro Wraps</h3>
-                    <span class="price">$19.99</span>
-                    <p>100% cotton with hook-and-loop closure</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card" data-category="boxing-foot-wraps">
-                <img src="images/boxing-foot-wraps.jpg" alt="Foot Protection">
-                <div class="product-details">
-                    <h3>Toe Shields</h3>
-                    <span class="price">$14.99</span>
-                    <p>Medical-grade padding for metatarsals</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <!-- Basketball Subcategories -->
-            <div class="product-card" data-category="basketball-backboards">
-                <img src="images/basketball-backboards.jpg" alt="Training Backboard">
-                <div class="product-details">
-                    <h3>Adjustable Backboard</h3>
-                    <span class="price">$249.99</span>
-                    <p>Tempered glass with height adjustment</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card" data-category="basketball-nets">
-                <img src="images/basketball-nets.jpg" alt="Replacement Net">
-                <div class="product-details">
-                    <h3>Pro-Grade Net</h3>
-                    <span class="price">$29.99</span>
-                    <p>100% braided polyester construction</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-    
-            <!-- Tennis Subcategories -->
-            <div class="product-card" data-category="tennis-strings">
-                <img src="images/tennis-strings.jpg" alt="String Set">
-                <div class="product-details">
-                    <h3>Nano Strings</h3>
-                    <span class="price">$39.99</span>
-                    <p>Polyester strings for maximum control</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card" data-category="tennis-shoes">
-                <img src="images/tennis-shoes.jpg" alt="Court Shoes">
-                <div class="product-details">
-                    <h3>Court Master</h3>
-                    <span class="price">$149.99</span>
-                    <p>Lateral support with herringbone traction</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-    
-            <!-- Running Subcategories -->
-            <div class="product-card" data-category="running-bra">
-                <img src="images/running-bra.jpg" alt="Sports Bra">
-                <div class="product-details">
-                    <h3>Impact Support</h3>
-                    <span class="price">$59.99</span>
-                    <p>High-impact compression fit</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card" data-category="running-hydration">
-                <img src="images/running-hydration.jpg" alt="Hydration Belt">
-                <div class="product-details">
-                    <h3>Run Pro Belt</h3>
-                    <span class="price">$39.99</span>
-                    <p>Carries 2x 350ml bottles</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-    
-            <!-- Cycling Subcategories -->
-            <div class="product-card" data-category="cycling-jersey">
-                <img src="images/cycling-jersey.jpg" alt="Cycling Jersey">
-                <div class="product-details">
-                    <h3>Aero Jersey</h3>
-                    <span class="price">$89.99</span>
-                    <p>3D-knit fabric with 3 back pockets</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card" data-category="cycling-water-bottle">
-                <img src="images/cycling-water-bottle.jpg" alt="Insulated Bottle">
-                <div class="product-details">
-                    <h3>CycleBottle</h3>
-                    <span class="price">$19.99</span>
-                    <p>Double-walled insulation</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
-
     <footer class="site-footer">
         <div class="container">
             <div class="footer-column">
-                <h4>Contact Us</h4>
-                <p>support@sportelite.com<br>+1-800-123-4567</p>
+                <h3>Contact Us</h3>
+                <p>support@sportelite.com</p>
+                <p>+1-800-123-4567</p>
             </div>
             <div class="footer-column">
-                <h4>Follow Us</h4>
+                <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-                    <a href="#"><img src="icons/twitter.svg" alt="Twitter"></a>
+                    <img src="images/facebook.png" alt="Facebook">
+                    <img src="images/twitter.png" alt="Twitter">
+                    <img src="images/instagram.png" alt="Instagram">
                 </div>
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
