@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', nextSlide);
 
     
-    setInterval(nextSlide, 10000);
+    setInterval(nextSlide, 15000);
 
   
     const categoryTogglers = document.querySelectorAll('.category-toggler');
